@@ -2,19 +2,19 @@
 
 为了方便大家阅读，这里简单用一张图来说明图表中各个部分的组成及名词解释。
 
-![Highcharts-components](http://static.hcharts.cn/images/hc-anatomy.png)
+![Highcharts-components](../images/hc-anatomy.png)
 
 ### 名词解释
 
- | 名词  | 解释  |
- | ------------- | -------------         |
- | title, subtile| 标题，副标题            |
- | print, download| 打印，下载，这里统称导出 |
- | xAxis, yAxis  | 坐标轴，包含 x 轴和 y 轴 |
- | credits       | 版权信息，水印          |
- | series        | 数据列                 |
- | tooltip       | 数据提示框              |
- | legend        | 图例                  |
+  名词             | 解释  
+  -------------   | -------------         
+  title, subtile  | 标题，副标题            
+  print, download | 打印，下载，这里统称导出
+  xAxis, yAxis    | 坐标轴，包含 x 轴和 y 轴
+  credits         | 版权信息，水印          
+  series          | 数据列                 
+  tooltip         | 数据提示框              
+  legend          | 图例                  
 
 
 ## Q：如何去掉水印（即图表中 highcharts.com 字样）
