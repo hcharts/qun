@@ -3,7 +3,9 @@
 以下是 Highcharts 中文网关于学习交流群的管理办法及细则。
 
 > 版本：v0.0.1
+
 > 发布时间：2016-01-21
+
 > 本文档参考借鉴自[《JS 高级前端开发群群规》](http://note.youdao.com/share/web/file.html?id=8a777eda4842aa0f3d7fc6161577ab9b&type=note)，并且会不定期更新
 
 
@@ -89,8 +91,10 @@
 
 ### 话题
 
-* [关于 Highcharts 的 100 个常见问题](https://github.com/hcharts/highcharts-faq/tree/master/faq-top-100)
-* [Highcharts 内部定义的错误](https://github.com/hcharts/highcharts-faq/tree/master/errors)
+* [关于 Highcharts 的 100 个常见问题](https://github.com/hcharts/qun/tree/master/faq-top-100)
+* [Highcharts 内部定义的错误](https://github.com/hcharts/qun/tree/master/errors)
+
+* [周报](https://github.com/hcharts/qun/tree/master/weekly)
 
 ### 贡献者
 
