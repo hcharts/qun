@@ -17,7 +17,7 @@
   legend          | 图例                  
 
 
-## Q：如何去掉水印（即图表中 highcharts.com 字样）
+## Q1：如何去掉水印（即图表中 highcharts.com 字样）
 
 A：通过设置  credits.enabled = false 即可
 
@@ -31,7 +31,7 @@ $('#container').highcharts({
 })
 ```
 
-## Q：如何增加导出功能（或显示导出按钮）？
+## Q2：如何增加导出功能（或显示导出按钮）？
 
 A：只需要引入 exporting.js 即可给图表加上导出功能
 
@@ -51,7 +51,7 @@ $('#container').highcharts({
 });
 ```
 
-## Q：如果去掉（或不显示）图例（Legend）？
+## Q3：如果去掉（或不显示）图例（Legend）？
 
 A：通过设置 legend.enabled = false 即可不显示图例，即
 
@@ -69,4 +69,33 @@ $('#container').highcharts({
 
 在饼图中默认是不显示图例的，可以通过 plotOptions.pie.showInLegend = true 来显示
 
-## Q：
+## Q4：如果阻止点击图例隐藏曲线？
+
+```
+plotOptions: {
+    series: {
+        events: {
+            legendItemClick: function(event) {
+                return false;
+                //return false 即可禁用LegendIteml，防止通过点击item显示隐藏系列
+            }
+        }
+    }
+}
+```
+
+论坛帖子：http://bbs.hcharts.cn/thread-1170-1-1.html
+
+### Q5：图表中时间为什么少了 8 小时？
+
+时区问题，中国的时区是 +8 区，通过配置如下代码即可解决这个问题
+
+```
+Highcharts.setOption({
+  global: {
+    timezoneOffset: -8 * 60
+  }
+});
+```
+
+论坛帖子：http://bbs.hcharts.cn/thread-1173-1-1.html
