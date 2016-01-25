@@ -99,3 +99,89 @@ Highcharts.setOption({
 ```
 
 论坛帖子：http://bbs.hcharts.cn/thread-1173-1-1.html
+
+### Q6： 如何设置图表颜色？
+
+1）最基本的图表线条（或柱形等），是通过 colors 来设置的，即
+
+```
+$('#container').highcharts({
+  // ...
+  colors: ['#7cb5ec', '#434348', '#90ed7d', '#f7a35c', '#8085e9','#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1']
+  // ..
+})
+```
+其中颜色值及个数完全可以自定义
+
+2）定义某个点的颜色
+
+通过设置 series.data.color 实现对某个点进行自定义颜色，实例效果如下
+
+![数据点颜色](/images/point-color.jpg)
+
+
+3）对于柱状图单个序列颜色的自定义，除了设置 colors外，还需要额外设置  plotOptions.column.colorByPoint = true ，其他类型图表类似的也有
+![color-by-point](/images/color-by-point.jpg)
+
+参考帖子：http://bbs.hcharts.cn/thread-491-1-2.html
+
+## Q7：如何将图表中的英文汉化（显示成中文）？
+
+![lang-chinese](/images/lang-chinese.jpg)
+
+请查看帖子：http://bbs.hcharts.cn/thread-70-1-1.html
+
+即设置 lang 属性，改属于用于图表中文字的显示，也就是说，图表中所有文字的修改都可以通过该属性下来设置。
+
+![lang-options](/images/lang-options.jpg)
+
+ 实例代码：
+
+```
+Highcharts.setOptions({
+    lang: {
+        contextButtonTitle: "图表导出菜单",
+        decimalPoint: ".",
+        downloadJPEG: "下载JPEG图片",
+        downloadPDF: "下载PDF文件",
+        downloadPNG: "下载PNG文件",
+        downloadSVG: "下载SVG文件",
+        drillUpText: "返回 {series.name}",
+        loading: "加载中",
+        months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+        noData: "没有数据",
+        numericSymbols: ["千", "兆", "G", "T", "P", "E"],
+        printChart: "打印图表",
+        resetZoom: "恢复缩放",
+        resetZoomTitle: "恢复图表",
+        shortMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].,
+        thousandsSep: ",",
+        weekdays: ["星期一", "星期二", "星期三", "星期三", "星期四", "星期五", "星期六", "星期天"].
+    }
+});
+
+
+$("#container").highcharts({
+    // Highcharts 代码
+});
+```
+
+ 注意：Highcharts.setOptions({}) 属于全局配置，代码是放在  $("#container").highcharts({}) 外面。
+
+## Q8：如何去掉图例单击事件？
+
+即如何使点击图例（Legend）不隐藏对应的序列（Series），设置代码是：
+```
+plotOptions: {
+    series: {
+       events: {
+          legendItemClick: function(event) {
+             return false;  //return false 即可禁用LegendIteml，防止通过点击item显示隐藏系列
+          }
+      }
+   }
+}
+```
+参考实例：http://www.hcharts.cn/demo/index.php?p=92
+
+对于饼图的图例事件是在  point.events.legendItemClick 里
